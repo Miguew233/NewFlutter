@@ -38,3 +38,48 @@ class Usuario {
 
   set senha(String? senha) => _senha = senha;
 }
+
+class Tipo{
+  int? _codigo;
+  String? _nome;
+
+  Tipo(int? codigo, String? nome){
+    _codigo = codigo;
+    _nome = nome;
+  }
+
+  int? get codigo => _codigo;
+  String? get nome => _nome;
+
+  set codigo(int? codigo) => _codigo = codigo;
+  set nome(String? nome) => _nome = nome;
+}
+
+
+class Restaurante{
+  int? _codigo;
+  String? _nome;
+  double? _latitude;
+  double? _longitude;
+  Usuario? _proprietario;
+  Tipo? _tipoCulinaria;
+
+
+  Restaurante(int? codigo, String? nome, double? latitude, double? longitude, Usuario? proprietario, Tipo? tipoCulinaria) {
+    _codigo = codigo;
+    _nome = nome;
+    _latitude = latitude;
+    _longitude = longitude;
+    _proprietario = proprietario;
+    _tipoCulinaria = tipoCulinaria;
+  }
+
+  int? get codigo => codigo;
+  String? get nome => _nome;
+  double? get latitude => _latitude;
+  double? get longitude => _longitude;
+  Usuario? get proprietario => _proprietario;
+  Tipo? get tipoCulinaria => _tipoCulinaria;
+
+  set codigo(int? codigo) => _codigo;
+}
