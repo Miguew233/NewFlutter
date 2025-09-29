@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'tela_home.dart';
 import 'package:flutter/material.dart';
-import 'banco/usuario_dao.dart';
+import '../banco/usuario_dao.dart';
+import '../telas/tela_home.dart';
+import 'package:voupedir/usuario.dart';
 
 class TelaLogin extends StatelessWidget{
   TelaLogin({super.key});
@@ -29,9 +29,9 @@ class TelaLogin extends StatelessWidget{
             ),
             SizedBox(height: 20),
             ElevatedButton(onPressed:() async{
-               final susseso = await UsuarioDao.autenticar(usuarioController.text, senhaController.text);
+               final sucesso = await UsuarioDao.autenticar(usuarioController.text, senhaController.text);
 
-                if (sucesso) {
+                if (sucesso){
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => TelaHome())
                  );

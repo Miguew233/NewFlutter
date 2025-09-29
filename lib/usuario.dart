@@ -19,9 +19,7 @@ class Usuario {
 
 //metodo ao estilo dart
   int? get codigo => _codigo;
-
   String? get nome => _nome;
-
   String? get senha => _senha;
 
 
@@ -33,9 +31,7 @@ class Usuario {
 
 //metodo set ao estilo dart
   set nome(String? nome) => _nome = nome;
-
   set codigo(int? codigo) => _codigo = codigo;
-
   set senha(String? senha) => _senha = senha;
 }
 
