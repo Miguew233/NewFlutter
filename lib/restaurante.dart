@@ -15,7 +15,7 @@ class Restaurante {
       this._latitude,
       this._longitude,
       this._proprietario,
-      this._tipoCulinaria,
+      this._tipoCulinaria, {required int codigo, required String nome}
       );
 
   int get codigo => _codigo;

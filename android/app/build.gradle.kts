@@ -4,6 +4,7 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
+// D:\miguel\NewFlutter\android\app\build.gradle.kts
 
 android {
     namespace = "com.example.voupedir"

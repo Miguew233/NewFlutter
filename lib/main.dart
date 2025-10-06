@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voupedir/telas/tela_home.dart';
 import 'telas/tela_login.dart';
 import 'estilos/estilos.dart';
 import 'usuario.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: TelaLogin(),
+        home: TelaHome(),
     );
   }
 }
