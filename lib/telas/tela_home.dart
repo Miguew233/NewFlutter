@@ -35,8 +35,13 @@ class TelaHomeState extends State<TelaHome>{
           title: const Text("Lista de restaurantes"),
           actions: [
             IconButton(
-                onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TelaCadRestaurante()));
+                onPressed: () async{
+                final t = await Navigator.push(context, MaterialPageRoute(builder: (context) => TelaCadRestaurante()));
+                if(t == false || t == null){
+                  setState((){
+                    carregarRestaurante();
+                  });
+                  }
                 },
                 icon: Icon(Icons.add)
             )
@@ -56,29 +61,36 @@ class TelaHomeState extends State<TelaHome>{
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     IconButton(
-                        onPressed: (){
-                          //Codigo para Editar Restaurante
-                        },
-                        icon: Icon(Icons.edit, color: Colors.blue)
-                    ),
+                        onPressed: () async{
+                          TelaEditRestaurante.restaurante = await RestauranteDAO.listar(r.codigo);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => TelaEditRestaurante()));
+
+                        }, icon: Icon(Icons.edit, color: Colors.blue)),
                     IconButton(
                         onPressed: (){
+                          showDialog(context: context,
+                          builder: (BuildContext context) =>
                           AlertDialog(
                             title: Text('Confirmar ação'),
                             content: Text('Deseja realmente excluir ?'),
                             actions: <Widget>[
                               TextButton(
                                   onPressed: (){
-                                    //Código para excluir o registro
+                                    RestauranteDAO.excluir(r);
+                                    setState(() {
+                                      carregarRestaurante();
+                                    });
+                                    Navigator.pop(context);
                                   },
                                   child: Text('sim')
                               ),
                               TextButton(onPressed: (){
-                                //
+                                Navigator.pop(context);
                               },
                                   child: Text('não')
                               )
                             ],
+                          ),
                           );
                         },
                         icon: Icon(Icons.delete, color: Colors.red)
