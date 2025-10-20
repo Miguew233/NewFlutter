@@ -2,33 +2,39 @@ import 'usuario.dart' hide Tipo;
 import 'tipo.dart';
 
 class Restaurante {
-  int _codigo;
-  String _nome;
-  double _latitude;
-  double _longitude;
-  Usuario _proprietario;
-  Tipo _tipoCulinaria;
+  int? _codigo;
+  String? _nome;
+  String? _latitude;
+  String? _longitude;
+  Usuario? _proprietario;
+  Tipo? _tipoCulinaria;
 
-  Restaurante(
-      this._codigo,
-      this._nome,
-      this._latitude,
-      this._longitude,
-      this._proprietario,
-      this._tipoCulinaria, {required int codigo, required String nome}
-      );
+  Restaurante({
+  int? codigo,
+  String? nome,
+  String? latitude,
+  String? longitude,
+  Usuario? proprietario,
+  Tipo? tipoCulinaria,
+}) {
+  _codigo = codigo;
+  _nome = nome;
+  _latitude = latitude;
+  _longitude = longitude;
+  _proprietario = proprietario;
+}
 
-  int get codigo => _codigo;
-  String get nome => _nome;
-  double get latitude => _latitude;
-  double get longitude => _longitude;
-  Usuario get proprietario => _proprietario;
-  Tipo get tipoCulinaria => _tipoCulinaria;
+  int? get codigo => _codigo;
+  String? get nome => _nome;
+  String? get latitude => _latitude;
+  String? get longitude => _longitude;
+  Usuario? get proprietario => _proprietario;
+  Tipo? get tipoCulinaria => _tipoCulinaria;
 
-  set codigo(int valor) => _codigo = valor;
-  set nome(String valor) => _nome = valor;
-  set latitude(double valor) => _latitude = valor;
-  set longitude(double valor) => _longitude = valor;
-  set proprietario(Usuario usuario) => _proprietario = usuario;
-  set tipoCulinaria(Tipo tipo) => _tipoCulinaria = tipo;
+  set codigo(int? valor) => _codigo = valor;
+  set nome(String? valor) => _nome = valor;
+  set latitude(String? valor) => _latitude = valor;
+  set longitude(String? valor) => _longitude = valor;
+  set proprietario(Usuario? usuario) => _proprietario = usuario;
+  set tipoCulinaria(Tipo? tipo) => _tipoCulinaria = tipo;
 }
